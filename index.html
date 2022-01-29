@@ -15,8 +15,18 @@
 
     <div class="control-panel">
         <button class="add-book control-panel-button">Add book</button>
-        <button class="sort-by control-panel-button">Sort by</button>
-        <button class="sort-order control-panel-button">Sort order</button>
+
+        <div class="sort-dropdown">
+            <button class="sort-by control-panel-button">Sort by</button>
+
+            <div class="sort-dropdown-content">
+                <button class="sort-by-title">Title</button>
+                <button class="sort-by-author">Author</button>
+                <button class="sort-by-price">Price</button>
+            </div>
+        </div>
+
+        <button class="reverse-order control-panel-button">Reverse order</button>
         <button class="clear-all-books control-panel-button">Clear all books</button>
     </div>
 

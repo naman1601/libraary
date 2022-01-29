@@ -93,7 +93,12 @@
 	};
 
 	const addButton = document.querySelector('.add-book');
+	const sortByButton = document.querySelector('.sort-by');
 	const clearAllButton = document.querySelector('.clear-all-books');
+	const sortByTitleButton = document.querySelector('.sort-by-title');
+	const sortByAuthorButton = document.querySelector('.sort-by-author');
+	const sortByPriceButton = document.querySelector('.sort-by-price');
+	const reverseOrderButton = document.querySelector('.reverse-order');
 	const displayArea = document.querySelector('.display-area');
 	const addBookOverlay = document.querySelector('.add-book-overlay');
 	const addBookTitleInput = document.querySelector('#add-book-title-input');
@@ -124,11 +129,69 @@
 		inputNewBook(addBookOverlay);
 	});
 
+	sortByButton.addEventListener('click', function () {
+		const sortDropdownContent = document.querySelector('.sort-dropdown-content');
+		sortDropdownContent.classList.toggle('show');
+		sortByButton.classList.toggle('control-panel-button-active');
+	});
+
+	sortByTitleButton.addEventListener('click', function () {
+		bookList.sort((a, b) => {
+			if (a.title < b.title) {
+				return -1;
+			}
+			if (a.title > b.title) {
+				return 1;
+			}
+			return 0;
+		});
+		updateDisplay(displayArea, bookList);
+	});
+
+	sortByAuthorButton.addEventListener('click', function () {
+		bookList.sort((a, b) => {
+			if (a.author < b.author) {
+				return -1;
+			}
+			if (a.author > b.author) {
+				return 1;
+			}
+			return 0;
+		});
+		updateDisplay(displayArea, bookList);
+	});
+
+	sortByPriceButton.addEventListener('click', function () {
+		bookList.sort((a, b) => {
+			if (a.price < b.price) {
+				return -1;
+			}
+			if (a.price > b.price) {
+				return 1;
+			}
+			return 0;
+		});
+		updateDisplay(displayArea, bookList);
+	});
+
+	reverseOrderButton.addEventListener('click', function () {
+		bookList.reverse();
+		updateDisplay(displayArea, bookList);
+	});
+
 	clearAllButton.addEventListener('click', function () {
 		bookList = [];
 		localStorage.clear();
 		updateDisplay(displayArea, bookList);
 	});
+
+	window.onclick = function(e) {
+		if(e.target != sortByButton) {
+			sortDropdownContent = document.querySelector('.sort-dropdown-content');
+			sortDropdownContent.classList.remove('show');
+			sortByButton.classList.remove('control-panel-button-active');
+		}
+	};
 
 	if (localStorage.getItem('bookList')) {
 		bookList = JSON.parse(localStorage.getItem('bookList'));
