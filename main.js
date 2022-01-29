@@ -109,7 +109,7 @@
 	bookList = [];
 
 	addBookConfirmButton.addEventListener('click', () => {
-		const newBook = bookFactory(addBookTitleInput.value, addBookAuthorInput.value, addBookPriceInput.value, false, new Date());
+		const newBook = bookFactory(addBookTitleInput.value, addBookAuthorInput.value, parseInt(addBookPriceInput.value), false, new Date());
 		addBookTitleInput.value = '';
 		addBookAuthorInput.value = '';
 		addBookPriceInput.value = null;

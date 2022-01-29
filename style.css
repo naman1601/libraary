@@ -106,7 +106,7 @@ body {
 
 .add-book-form input {
 	border: #82c5fc solid 3px;
-	border-radius: 20px;
+	border-radius: 10px;
 	height: 35px;
 	width: 400px;
 	margin-top: 35px;
