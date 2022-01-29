@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Overlays
+    </title>
+    <meta charset="UTF-8">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        naman1601's library
+    </div>
+
+    <div class="control-panel">
+        <button class="add-book control-panel-button">Add book</button>
+        <button class="sort-by control-panel-button">Sort by</button>
+        <button class="sort-order control-panel-button">Sort order</button>
+        <button class="clear-all-books control-panel-button">Clear all books</button>
+    </div>
+
+    <div class="display-area"></div>
+
+    <div class="add-book-overlay">
+        <div class="add-book-form">
+            <div class="add-book-header">
+                Add a new book!
+            </div>
+
+            <div class="add-book-title-input-container">
+                <input type="text" id="add-book-title-input" placeholder="Title of the Book">
+            </div>
+
+            <div class="add-book-author-input-container">
+                <input type="text" id="add-book-author-input" placeholder="Author's name">
+            </div>
+
+            <div class="add-book-price-input-container">
+                <input type="number" id="add-book-price-input" placeholder="Price of the book (in Rs.)">
+            </div>
+
+            <div class="add-book-form-buttons-container">
+                <button class="add-book-form-confirm-button">Confirm</button>
+                <button class="add-book-form-cancel-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
