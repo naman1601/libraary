@@ -32,6 +32,11 @@ body {
     background-color: white;
 }
 
+.control-panel-button:hover {
+    background-color: #2887d4;
+    color: white;
+}
+
 .add-book-overlay {
     visibility: hidden;
     display: flex;
@@ -188,6 +193,11 @@ body {
     border-radius: 50px;
     color: red;
     background-color: white;
+}
+
+.book-delete-button:hover {
+    background-color: red;
+    color: white;
 }
 
 .book-card:hover .book-delete-button {
